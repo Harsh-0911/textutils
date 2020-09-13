@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Text utils
+{% endblock %}
+
+{% block body %}
+<h1>Your text has been analyzed.</h1>
+<hr>
+    <h2>
+        Analyzed text is below:
+    </h2>
+
+    <p>
+        <!-- 
+        In html <p> tag is removes extra newlines automatically. So, it you're sending your data with
+        new line, paragraph tag will not print the new lines. So, using pre tag you can ensure that
+        the data printed is as same as the data send by the script.
+        -->
+        <pre>{{ data }}</pre>
+    </p>
+    
+{% endblock %}

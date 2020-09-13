@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Text utils
+{% endblock %}
+
+{% block body %}
+
+<h2>Welcome to Textutils...</h2><br>
+
+<form action='/analyze' method='post'> {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter your text here...</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name='data'></textarea>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" name='removepunc'>
+        <label class="custom-control-label" for="customSwitch1">Remove Punctuation</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch2" name='removeline'>
+        <label class="custom-control-label" for="customSwitch2">Remove New Line</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch3" name='removespace'>
+        <label class="custom-control-label" for="customSwitch3">Remove Extra Spaces</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch4" name='capitalize'>
+        <label class="custom-control-label" for="customSwitch4">Capitalize</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch5" name='upper'>
+        <label class="custom-control-label" for="customSwitch5">Convert to uppercase</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch6" name='lower'>
+        <label class="custom-control-label" for="customSwitch6">Convert to lowercase</label>
+    </div>
+
+    <button type="submit" class="btn btn-success" name='analyze'>Analyze</button>
+    
+</form>
+
+{% endblock %}
